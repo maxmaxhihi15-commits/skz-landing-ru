@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Спасибо!</title>
+  <meta name="description" content="В ближайшее время наш менеджер свяжется с Вами.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="/assets/img/logo-kb.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/thank-you.css">
+
+  <!-- Google Tag Manager (той самий контейнер, що й на лендінгу) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WQSTVG6H');</script>
+
+  <!-- Google Ads: конверсія «заявка» (як на сторінці подяки в Creatium) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16898385192"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-16898385192');
+
+    // Рахуємо конверсію лише після реальної заявки: форма ставить позначку перед переходом сюди.
+    // Повторне відкриття чи оновлення сторінки не створить зайвої конверсії.
+    (function () {
+      var fromForm = true;
+      try {
+        fromForm = sessionStorage.getItem('lead_submitted') === '1';
+        sessionStorage.removeItem('lead_submitted');
+      } catch (e) { /* сховище недоступне — рахуємо, як в оригіналі */ }
+      if (fromForm) gtag('event', 'conversion', { send_to: 'AW-16898385192/BB4oCPP66MoaEKjK4_k-' });
+    })();
+  </script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQSTVG6H" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<main class="thanks">
+  <p class="thanks__brand">Конс на Би$</p>
+
+  <h1 class="thanks__title">Спасибо!</h1>
+  <p class="thanks__subtitle">Ваша заявка принята.</p>
+  <p class="thanks__lead">В ближайшее время наш менеджер свяжется с Вами.</p>
+
+  <p class="thanks__text">Мы подготовили для Вас приятный бонус — видео,<br>
+    в котором основатель Бизнес-Клуба Конс на Би$ Александр Морозов рассказывает о трёх вещах,<br>
+    которые нужно знать каждому предпринимателю.</p>
+
+  <div class="thanks__video">
+    <iframe src="https://player.vimeo.com/video/936726393?autoplay=1&amp;loop=0&amp;muted=1"
+            title="Александр Морозов: три вещи, которые нужно знать каждому предпринимателю"
+            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <p class="thanks__text">А пока Вы ожидаете — получите доступ к закрытому Telegram-каналу нашего клуба.<br>
+    Внутри — материалы, разборы и анонсы встреч, которые мы не публикуем в открытых каналах.</p>
+
+  <a class="tg-btn" href="https://t.me/+7mXOHceFdUY4MWJi" target="_blank" rel="noopener">
+    <span class="tg-btn__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M21.9 4.3 18.7 19.4c-.2 1.1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.2-8.3c.4-.4-.1-.6-.6-.2L6.1 13 1.2 11.5c-1.1-.3-1.1-1.1.2-1.6L20.5 2.6c.9-.3 1.7.2 1.4 1.7Z"/></svg>
+    </span>
+    Присоединиться к каналу
+  </a>
+</main>
+</body>
+</html>
