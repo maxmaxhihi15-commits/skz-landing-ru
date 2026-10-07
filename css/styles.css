@@ -432,6 +432,7 @@ a { color: var(--blue); }
 .stories { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .story { overflow: hidden; border-radius: 18px; background: #fff; box-shadow: 0 10px 30px rgba(20,60,140,.1); border: 2px solid #a9c6f5; }
 .story__photo { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 30%; }
+.story__photo--top { object-position: center top; }
 .story__body { padding: 18px 22px 22px; font-family: var(--font-body); }
 .story__name { margin: 0 0 8px; font: 600 20px/1.3 var(--font-card); color: #222; }
 .story__niche { margin: 0 0 14px; font-size: 14px; color: #444; }
