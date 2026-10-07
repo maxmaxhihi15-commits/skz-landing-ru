@@ -26,6 +26,10 @@
     hero: {
       name: 'Заявка на безкоштовну консультацію, форма на першому екрані (СКЗ — Google пошук)',
       button: 'Получить бесплатную консультацию'
+    },
+    cases: {
+      name: 'Заявка на безкоштовну консультацію, сторінка кейсів (СКЗ — Google пошук)',
+      button: 'Получить бесплатную консультацию'
     }
   };
 
@@ -211,6 +215,23 @@
       if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) e.target.close();
     }
   });
+
+  // ----- Відео-кейси (сторінка /kejsy): Vimeo у модальному вікні -----
+  var videoModal = document.getElementById('video-modal');
+  if (videoModal && videoModal.showModal) {
+    var videoFrame = videoModal.querySelector('.video-modal__frame');
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-video]');
+      if (!btn) return;
+      videoFrame.innerHTML = '<iframe src="https://player.vimeo.com/video/' + btn.getAttribute('data-video') +
+        '?autoplay=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Видео-кейс"></iframe>';
+      videoModal.showModal();
+    });
+    videoModal.addEventListener('close', function () { videoFrame.innerHTML = ''; });
+    videoModal.addEventListener('click', function (e) {
+      if (e.target.closest('[data-close-video]') || e.target === videoModal) videoModal.close();
+    });
+  }
 
   // ----- Рік у футері -----
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
